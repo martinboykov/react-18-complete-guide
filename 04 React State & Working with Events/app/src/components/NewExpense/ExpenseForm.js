@@ -3,25 +3,6 @@ import React, { useState } from 'react';
 import './ExpenseForm.css';
 
 function ExpenseForm(props) {
-  // const [userInput, setUserInput] = useState({});
-  // const titleChangeHandler = (e) => {
-  //   setUserInput((prevState) => {
-  //     console.log(prevState);
-  //     return { ...prevState, enteredTitle: e.target.value };
-  //   });
-  // };
-  // const amountChangeHandler = (e) => {
-  //   setUserInput((prevState) => {
-  //     console.log(prevState);
-  //     return { ...prevState, enteredAmount: e.target.value };
-  //   });
-  // };
-  // const dateChangeHandler = (e) => {
-  //   setUserInput((prevState) => {
-  //     console.log(prevState);
-  //     return { ...prevState, enteredDate: e.target.value };
-  //   });
-  // };
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setAmountTitle] = useState('');
   const [enteredDate, setEnteredDate] = useState('');
@@ -47,6 +28,9 @@ function ExpenseForm(props) {
     setEnteredTitle('');
     setAmountTitle('');
     setEnteredDate('');
+  };
+  const switchFormStateHandler = () => {
+    props.onCancel();
   };
 
   return (
@@ -81,8 +65,15 @@ function ExpenseForm(props) {
           />
         </div>
       </div>
-      <div className='new-expense__action'>
-        <button type='submit'>Add Expense</button>
+      <div className='buttons-wrapper'>
+        <div className='new-expense__action'>
+          <button type='button' onClick={switchFormStateHandler}>
+            Cancel
+          </button>
+        </div>
+        <div className='new-expense__action'>
+          <button type='submit'>Add Expense</button>
+        </div>
       </div>
     </form>
   );
