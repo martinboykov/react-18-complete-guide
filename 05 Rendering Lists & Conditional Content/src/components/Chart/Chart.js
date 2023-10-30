@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../../08 Time to Practice_ A Complete Practice Project/node_modules/@types/react';
 import './Chart.css';
 import ChartBar from './ChartBar';
 function Chart(props) {

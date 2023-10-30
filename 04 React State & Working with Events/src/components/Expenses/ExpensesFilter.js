@@ -1,4 +1,4 @@
-import React from 'react';
+import React from '../../../../05 Rendering Lists & Conditional Content/node_modules/@types/react';
 
 import './ExpensesFilter.css';
 

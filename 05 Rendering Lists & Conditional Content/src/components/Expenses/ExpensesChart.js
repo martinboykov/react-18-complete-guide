@@ -15,6 +15,7 @@ function ExpensesChart(props) {
     { label: 'Nov', value: 0 },
     { label: 'Dec', value: 0 },
   ];
+
   for (const expense in props.expenses) {
     if (Object.hasOwnProperty.call(props.expenses, expense)) {
       const expenseData = props.expenses[expense];
