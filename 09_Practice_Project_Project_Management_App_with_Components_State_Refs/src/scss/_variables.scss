@@ -1,0 +1,119 @@
+@use "sass:math";
+
+:root {
+  --border-radius: 0.5rem;
+}
+
+// COLORS
+$color-white            : #fff           ;
+$color-black            : #000           ;
+$color-black-light      : #110D0D        ;
+$color-gray-very-light  : #CFCCCC        ;
+$color-gray-light       : #E2DFDF        ;
+$color-gray             : #87827F        ;
+$color-gray-dark        : #332E2B        ;
+
+$categories-color-map: (
+  'white'     : $color-white,
+  'black'     : $color-black,
+  'black-light'     : $color-black-light,
+  'gray'      : $color-gray,
+);
+
+
+//Font
+$font-size-html-percent: math.div(62.5,100);
+
+$font-size-desktop-body          : 1.6rem                     ;
+$font-size-desktop-body-big      : 2.0rem                     ;
+$font-size-desktop-heading1      : 4.6rem                     ;
+$font-size-desktop-heading2      : 4.2rem                     ;
+$font-size-desktop-heading3      : 3.0rem                     ;
+$font-size-desktop-heading4      : 2rem                       ;
+$font-size-desktop-heading5      : 1.8rem                     ;
+$font-size-desktop-heading6      : 1.2rem                     ;
+
+$font-size-mobile-body           : 1.6rem                     ;
+$font-size-mobile-body-big       : 1.8rem                     ;
+$font-size-mobile-heading1       : 3.0rem                     ;
+$font-size-mobile-heading2       : 2.8rem                     ;
+$font-size-mobile-heading3       : 2.4rem                     ;
+$font-size-mobile-heading4       : 1.8rem                     ;
+$font-size-mobile-heading5       : 1.6rem                     ;
+$font-size-mobile-heading6       : 1.2rem                     ;
+
+$font-line-height-body          : calc(2.5 / 1.8)             ;
+$font-line-height-body-big      : calc(3.4 / 2.0)             ;
+$font-line-height-heading1      : calc(5.6 / 4.6)             ;
+$font-line-height-heading2      : calc(4.2 / 4.2)             ;
+$font-line-height-heading3      : calc(3.6 / 3.0)             ;
+$font-line-height-heading4      : calc(2.8 / 2)               ;
+$font-line-height-heading5      : calc(2.5 / 1.8)             ;
+$font-line-height-heading6      : calc(2.2 / 1.6)             ;
+
+$font-types: (
+  'body'        : var(--font-size-body        ) ,
+  'body-big'    : var(--font-size-body-big  ) ,
+  'heading1'    : var(--font-size-heading1    ) ,
+  'heading2'    : var(--font-size-heading2    ) ,
+  'heading3'    : var(--font-size-heading3    ) ,
+  'heading4'    : var(--font-size-heading4    ) ,
+  'heading5'    : var(--font-size-heading5    ) ,
+  'heading6'    : var(--font-size-heading6    ) ,
+);
+
+$font-line-height-sizes: (
+  'body'        : $font-line-height-body          ,
+  'body-big'    : $font-line-height-body-big      ,
+  'heading1'    : $font-line-height-heading1      ,
+  'heading2'    : $font-line-height-heading2      ,
+  'heading3'    : $font-line-height-heading3      ,
+  'heading4'    : $font-line-height-heading4      ,
+  'heading5'    : $font-line-height-heading5      ,
+  'heading6'    : $font-line-height-heading6      ,
+);
+
+// grid
+$mobile-very-small: 350;
+$mobile-small: 480;
+$mobile: 830; // 830 + 2*30 = 790
+$tablet: 1120; // 1110 + 2*30 = 1170
+$desktop: 1440; // 1440x
+$fhd            : 1920;
+$qhd            : 2560;
+$uhd            : 3840;
+
+$spacer-small : 1rem;
+$spacer-medium: 2rem;
+$spacer-large : 3rem;
+$spacer-huge  : 4rem;
+$spacer-layout-padding  : 3rem;
+
+$width-very-small:  calc(#{math.div($mobile-very-small,10)}rem  + 2 * #{$spacer-layout-padding}); // 770
+$width-small:  calc(#{math.div($mobile,10)}rem  + 2 * #{$spacer-layout-padding}); // 770
+$width-medium: calc(#{math.div($tablet,10)}rem + 2 * #{$spacer-layout-padding}); // 1110
+$width-large:  100%; // 1440
+$width-header: 100%;
+
+$layout-sizes: (
+  'desktop'     : $desktop,
+  'tablet'      : $tablet,
+  'mobile'      : $mobile,
+  'mobile-small': $mobile-small,
+);
+
+$spacer-sizes: (
+  'huge':   $spacer-huge,
+  'large':  $spacer-large ,
+  'medium': $spacer-medium,
+  'small':  $spacer-small ,
+);
+
+
+
+// Durations
+$speed-slow: 600;
+$speed-normal: 300;
+$speed-fast: 200;
+$speed-default: $speed-normal;
+

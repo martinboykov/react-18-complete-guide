@@ -1,0 +1,29 @@
+:where(.btn),
+:where(.btn:link),
+:where(.btn:visited) {
+  position: relative;
+  min-height: 4rem;
+  line-height: 4rem;
+  max-width: 100%;
+  padding: 0 2rem;
+  flex: 0 0 auto;
+  border: 1px solid $color-gray-dark;
+  border-radius: var(--border-radius);
+  color: $color-gray;
+  background-color: $color-gray-dark;
+  font-size: 2rem;
+  text-decoration: none;
+  vertical-align: center;
+  text-align: center;
+  overflow: visible; /* the overflow property removes extra width in IE */
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  &.btn-dark {
+    background: $color-black-light;
+  }
+  &.btn-link {
+    border: 0;
+    background-color: transparent;
+  }
+}

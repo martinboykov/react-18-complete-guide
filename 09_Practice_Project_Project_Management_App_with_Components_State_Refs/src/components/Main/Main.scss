@@ -1,0 +1,15 @@
+@import '../../scss/variables';
+main {
+  max-width: 80rem;
+}
+.empty {
+  h2 {
+    color: $color-gray-dark;
+  }
+  img {
+    width: 6rem;
+  }
+  * {
+    margin: 0;
+  }
+}

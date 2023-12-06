@@ -1,0 +1,62 @@
+@import './functions';
+
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin changeColor($text-color, $backgroundColor) {
+  color: $text-color;
+  background-color: $backgroundColor;
+}
+
+@mixin transition($prop: all, $time: $speed-default, $func: linear) {
+  transition: $prop #{$time}ms $func;
+}
+
+@mixin line-clamp($max-lines: 1) {
+    display: -webkit-box;
+    -webkit-line-clamp: $max-lines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+
+@mixin hidden() {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// MEDIA QUERY MANAGER
+
+@mixin respond($breakpoint) {
+  @if ($breakpoint == 320                    ) { @media (max-width: 320px       ) { @content; }}
+  @if ($breakpoint == device(mobile-smallest)) { @media (max-width: 380px       ) { @content; }}
+  @if ($breakpoint == 380                    ) { @media (max-width: 380px       ) { @content; }}
+  @if ($breakpoint == device(mobile-small)   ) { @media (max-width: 480px       ) { @content; }}
+  @if ($breakpoint == 540                    ) { @media (max-width: 540px       ) { @content; }}
+  @if ($breakpoint == 640                    ) { @media (max-width: 640px       ) { @content; }}
+  @if ($breakpoint == device(mobile)         ) { @media (max-width: #{$mobile}px) { @content; }}
+  @if ($breakpoint == 860                    ) { @media (max-width: 860px       ) { @content; }}
+  @if ($breakpoint == 900                    ) { @media (max-width: 900px       ) { @content; }}
+  @if ($breakpoint == 960                    ) { @media (max-width: 960px       ) { @content; }}
+  @if ($breakpoint == 1080                   ) { @media (max-width: 1080px      ) { @content; }}
+  @if ($breakpoint == device(tablet)         ) { @media (max-width:#{$tablet}px ) { @content; }}
+  @if ($breakpoint == 1200                   ) { @media (max-width: 1200px      ) { @content; }}
+  @if ($breakpoint == 1300                   ) { @media (max-width: 1300px      ) { @content; }}
+  @if ($breakpoint == 1380                   ) { @media (max-width: 1380px      ) { @content; }}
+  @if ($breakpoint == device(desktop)        ) { @media (max-width:#{$desktop}px) { @content; }}
+  @if ($breakpoint == 1600                   ) { @media (max-width: 1600px      ) { @content; }}
+  @if ($breakpoint == device(fhd)         ) { @media (max-width:#{$fhd}px      ) { @content; }}
+  @if ($breakpoint == device(qhd)         ) { @media (min-width:#{$fhd+1}px    ) { @content; }}
+  @if ($breakpoint == device(uhd)         ) { @media (min-width:#{$qhd+1}px    ) { @content; }}
+}

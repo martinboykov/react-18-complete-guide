@@ -1,0 +1,29 @@
+// @import '../abstracts/mixins';
+// @import '../abstracts/root';
+
+@function is-number($value) {
+  @return type-of($value) == 'number';
+}
+@function is-integer($value) {
+  @return is-number($value) and round($value) == $value;
+}
+
+@function device($size) {
+  @if (is-number($size)) {
+    @return #{$size};
+  } @else {
+    @return #{map-get($layout-sizes, $size)};
+  }
+}
+
+@function get-text($font-size) {
+  @if (is-number($font-size)) {
+    @return #{$font-size};
+  } @else {
+    @return #{map-get($font-types, $font-size)};
+  }
+}
+@function get-px($rem) {
+  @return $rem * $font-size-html-percent * 16; // $rem must be unitless
+}
+
